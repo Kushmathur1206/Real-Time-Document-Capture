@@ -71,7 +71,8 @@ while True:
 
     # SAVE IMAGE WHEN 's' key is pressed
     if cv2.waitKey(1) & 0xFF == ord('s'):
-        cv2.imwrite("Scanned/myImage" + str(count) + ".jpg", imgWarpColored)
+        save_dir = "Scanned/"
+        cv2.imwrite(save_dir + str(count) + ".jpg", imgWarpColored)
         cv2.rectangle(stackedImage, ((int(stackedImage.shape[1] / 2) - 230), int(stackedImage.shape[0] / 2) + 50),
                       (1100, 350), (0, 255, 0), cv2.FILLED)
         cv2.putText(stackedImage, "Scan Saved", (int(stackedImage.shape[1] / 2) - 200, int(stackedImage.shape[0] / 2)),
