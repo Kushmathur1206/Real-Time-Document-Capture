@@ -58,12 +58,9 @@ while True:
         imgAdaptiveThre = cv2.medianBlur(imgAdaptiveThre, 3)
 
         # Image Array for Display
-        imageArray = ([img, imgGray, imgThreshold, imgContours],
-                      [imgBigContour, imgWarpColored, imgWarpGray, imgAdaptiveThre])
-
+        imageArray = ([img, imgWarpColored])
     else:
-        imageArray = ([img, imgGray, imgThreshold, imgContours],
-                      [imgBlank, imgBlank, imgBlank, imgBlank])
+        imageArray = ([img, imgBlank])
 
 
     stackedImage = utlis.stackImages(imageArray, 0.75)
